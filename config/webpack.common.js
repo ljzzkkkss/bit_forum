@@ -7,7 +7,8 @@ module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
-    'fa':        'font-awesome-sass-loader!./config/font-awesome.config.js',
+    'fa': 'font-awesome-sass-loader!./config/font-awesome.config.js',
+    'twbs':'bootstrap-loader',
     'app': './src/main.ts'
   },
 
@@ -93,8 +94,7 @@ module.exports = {
       Popover: "exports-loader?Popover!bootstrap/js/dist/popover",
       Scrollspy: "exports-loader?Scrollspy!bootstrap/js/dist/scrollspy",
       Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
-      Util: "exports-loader?Util!bootstrap/js/dist/util",
-      BootstrapVersion:4
+      Util: "exports-loader?Util!bootstrap/js/dist/util"
     }),
 
     new HtmlWebpackPlugin({
