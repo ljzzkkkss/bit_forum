@@ -1,7 +1,25 @@
-main {
-  padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
+html,body{
+  height: 100%;
+}
+.login{
+  height: 100%;
+  width: 100%;
+  background-image: url("../resource/image/bg.jpg");
+  background-size: 100%;
+}
+.loginBtn{
+  position: relative;
+  top: 43%;
+  left: 45%;
+  width: 15%;
+  height: 8%;
+  opacity:0.5;
+  filter:alpha(opacity=50);
+}
+.loginBtn:hover{
+  opacity:0.85;
+  filter:alpha(opacity=85);
+}
+.modal-dialog{
+  top: 20%;
 }
