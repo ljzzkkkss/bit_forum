@@ -4,7 +4,7 @@ html,body{
 .login{
   height: 100%;
   width: 100%;
-  background-image: url("../../resource/image/bg.jpg");
+  background-image: url("../../../resource/image/bg.jpg");
   background-size: 100%;
 }
 .loginBtn{
