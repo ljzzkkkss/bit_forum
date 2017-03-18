@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {AuthService} from "../../service/auth.service";
 @Component({
   selector: 'login',
   templateUrl: 'login.component.html',
@@ -7,11 +8,23 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private router: Router) {
-
+  constructor(public authService: AuthService, public router: Router) {
   }
 
-  doLogin(): void {
-    this.router.navigate(['/homepage']);
+  login(): void {
+    this.authService.login().subscribe(() => {
+      if (this.authService.isLoggedIn) {
+        // Get the redirect URL from our auth service
+        // If no redirect has been set, use the default
+        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/homepage';
+        console.info(redirect);
+        // Redirect the user
+        this.router.navigate([redirect]);
+      }
+    });
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
