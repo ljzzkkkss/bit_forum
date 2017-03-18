@@ -7,7 +7,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true" #LoginModal>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -34,7 +34,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="login()" >Login</button>
+        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" >Login</button>
         <button type="button" class="btn btn-secondary">Sign in</button>
       </div>
     </div>
