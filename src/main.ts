@@ -1,8 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import './third-part/bootstrap/css/bootstrap.min.css';
-import './third-part/bootstrap/css/bootstrap-grid.min.css';
-import './third-part/bootstrap/css/bootstrap-reboot.min.css';
 import { AppModule } from './app/modules/app.module';
 import './styles.css';
 if (process.env.ENV === 'production') {
