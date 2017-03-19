@@ -1,26 +1,68 @@
-<div class="bgImage">
-    <div class="nav">
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
-            <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['/homepage']">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"[routerLink]="['/login']">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" [routerLink]="['/homepage']">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
+    <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/homepage']">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/login']">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" [routerLink]="['/homepage']">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<header class="bgImage">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-14 text-center">
+                <div class="jumbotron jumbotron-fluid bg-faded">
+                    <div class="display-tc animate-box fadeIn animated-fast" data-animate-effect="fadeIn">
+                        <h1 class="display-3">We are Bit Studio</h1>
+                        <button type="button" class="btn btn-outline-success btn-lg">Join Us</button>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
+    </div>
+</header>
+<div class="row">
+    <div class="col-md-3">
+        <span class="icon">
+            <i class="icon-eye"></i>
+        </span>
+        <div class="desc">
+            <h3>Retina Ready</h3>
+            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+            <p><a href="#" class="btn btn-primary">Learn More</a></p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <span class="icon">
+            <i class="icon-eye"></i>
+        </span>
+        <div class="desc">
+            <h3>Retina Ready</h3>
+            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+            <p><a href="#" class="btn btn-primary">Learn More</a></p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <span class="icon">
+            <i class="icon-eye"></i>
+        </span>
+        <div class="desc">
+            <h3>Retina Ready</h3>
+            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+            <p><a href="#" class="btn btn-primary">Learn More</a></p>
+        </div>
     </div>
 </div>
