@@ -19,3 +19,6 @@
 .jumbotron{
     padding-top: 13rem!important;
 }
+.poptop{
+    z-index:1000;
+}
