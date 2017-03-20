@@ -7,7 +7,7 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class AuthService {
-    isLoggedIn: boolean = false;
+    isLoggedIn: boolean = (window.localStorage.getItem('bit_forum_islogin') == '1');
 
     // store the URL so we can redirect after logging in
     redirectUrl: string;
