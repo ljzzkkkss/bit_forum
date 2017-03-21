@@ -13,13 +13,22 @@ export class AuthGuard implements CanActivate{
     }
 
     checkLogin(url: string): boolean {
-        if (this.authService.isLoggedIn) { return true; }
+        if (this.authService.isLoggedIn) {
+          if(url == '/login'){//如果是进登录页并且已经登陆l直接跳转首页
+            this.router.navigate(['/homepage']);
+          }
+          return true;
+        }
 
         // Store the attempted URL for redirecting
         this.authService.redirectUrl = url;
 
         // Navigate to the login page with extras
-        this.router.navigate(['/login']);
+        if(url != '/login') {
+          this.router.navigate(['/login']);
+        }else{
+          return true;//如果是登陆直接跳转
+        }
         return false;
     }
 

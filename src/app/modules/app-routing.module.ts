@@ -9,7 +9,10 @@ import {AuthService} from "../service/auth.service";
 
 const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-  { path: 'login', component:LoginComponent },
+  {
+    path: 'login',
+    canActivate: [AuthGuard],
+    component:LoginComponent },
   {
     path: 'homepage',
     canActivate: [AuthGuard],
