@@ -19,7 +19,7 @@
       <div class="modal-body">
         <form #loginForm="ngForm">
           <div class="form-group">
-            <label class="form-control-label" for="username">Username</label>
+            <label class="form-control-label" for="username">Username  <i class="fa fa-user-circle" aria-hidden="true"></i></label>
             <input #usernameinput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" id="username" placeholder="Please input your username">
             <div class="alert alert-danger" role="alert"  [hidden]="usernameinput.valid || usernameinput.pristine">
               <strong>Please</strong> enter your username.
