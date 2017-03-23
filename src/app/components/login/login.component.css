@@ -4,17 +4,21 @@ html,body{
 .login{
   height: 100%;
   width: 100%;
-  background-image: url("../../../resource/image/bg.jpg");
   background-size: 100%;
+  /*background-image: url("../../../resource/image/login/1200x747.jpg");*/
 }
 .loginBtn{
   position: relative;
-  top: 43%;
-  left: 43%;
-  width: 15%;
-  height: 8%;
+  width: 200px;
+  height: 50px;
   opacity:0.5;
   filter:alpha(opacity=50);
+}
+.row{
+  height : 100%
+}
+.container{
+  height : 100%
 }
 .loginBtn:hover{
   opacity:0.85;
@@ -22,4 +26,19 @@ html,body{
 }
 .modal-dialog{
   top: 20%;
+}
+@media screen and ( max-width: 640px ) {
+  .login {
+    background-image: url("../../../resource/image/login/640x1136.jpg");
+  }
+}
+@media screen and ( max-width: 750px ) {
+  .login {
+    background-image: url("../../../resource/image/login/750x1334.jpg");
+  }
+}
+@media screen and ( max-width: 1200px ) {
+  .login {
+    background-image: url("../../../resource/image/login/1200x747.jpg");
+  }
 }
