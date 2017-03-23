@@ -8,13 +8,14 @@
     background-color: transparent!important;
 }
 .navbar{
-    float: right;
-}
+    position: absolute!important;
+    width: 100%;
+ }
 .text-center{
     text-align: center;
 }
 .row{
-    margin: 0px!important;
+    margin: 0!important;
 }
 .jumbotron{
     padding-top: 13rem!important;
