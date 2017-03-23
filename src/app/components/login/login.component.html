@@ -17,14 +17,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form #loginForm="ngForm">
           <div class="form-group">
             <label class="form-control-label" for="username">Username</label>
-            <input type="text" [(ngModel)]="username" class="form-control" name="usrname" id="username" placeholder="Please input your username">
+            <input #usernameinput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" id="username" placeholder="Please input your username">
+            <div class="alert alert-danger" role="alert"  [hidden]="usernameinput.valid || usernameinput.pristine">
+              <strong>Please</strong> enter your username.
+            </div>
           </div>
           <div class="form-group">
             <label class="form-control-label" for="password">Password</label>
-            <input type="password" [(ngModel)]="password" class="form-control" name="usrname" id="password" placeholder="Please input your password">
+            <input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="Please input your password">
+            <div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">
+              <strong>Please</strong> enter your passowrd.
+            </div>
           </div>
           <div>
             <label class="form-check-label">
@@ -34,7 +40,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" >Login</button>
+        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" [disabled]="!loginForm.form.valid">Login</button>
         <button type="button" class="btn btn-secondary">Sign in</button>
       </div>
     </div>
