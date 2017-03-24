@@ -77,7 +77,7 @@ styles:
   buttons: true
 
   # Components
-  animation: false
+  transitions: true
   dropdown: true
   button-group: true
   input-group: true
@@ -87,6 +87,7 @@ styles:
   card: true
   breadcrumb: true
   pagination: true
+  badge: true
   jumbotron: true
   alert: true
   progress: true
@@ -94,7 +95,6 @@ styles:
   list-group: true
   responsive-embed: true
   close: true
-  tags: false
 
   # Components w/ JavaScript
   modal: true
