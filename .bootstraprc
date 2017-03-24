@@ -117,4 +117,4 @@ scripts:
   scrollspy: true
   tab: true
   tooltip: true
-  util: true
+  util: trueg
