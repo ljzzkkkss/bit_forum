@@ -47,15 +47,15 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" [disabled]="!loginForm.form.valid">Register</button>
-        <button type="button" class="btn btn-secondary">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" [disabled]="!loginForm.form.valid">Login</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModal" aria-hidden="true" #RegisterModal>
+<div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="SignInModal" aria-hidden="true" #SignInModal>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -65,7 +65,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #RegisterForm="ngForm">
+        <form #SignInForm="ngForm">
           <div class="form-group">
             <label class="form-control-label" for="username">Username  <i class="fa fa-user-circle" aria-hidden="true"></i></label>
             <input #usernameinput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="Please input your username">
@@ -80,16 +80,16 @@
               <strong>Please</strong> enter your password.
             </div>
           </div>
+          <!--<div class="form-group">-->
+            <!--<label class="form-control-label" for="password">Password</label>-->
+            <!--<input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Please input your password again">-->
+            <!--<div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">-->
+              <!--<strong>Please</strong> retry your password.-->
+            <!--</div>-->
+          <!--</div>-->
           <div class="form-group">
-            <label class="form-control-label" for="password">Password</label>
-            <input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Please input your password again">
-            <div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">
-              <strong>Please</strong> retry your password.
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" for="password">Password</label>
-            <input #passwordinput="ngModel" required type="email" [(ngModel)]="email" class="form-control" name="password" placeholder="Please input your e-mail">
+            <label class="form-control-label" for="password">Email</label>
+            <input #emailinput="ngModel" required type="email" [(ngModel)]="email" class="form-control" name="email" placeholder="Please input your e-mail">
             <div class="alert alert-danger" role="alert" [hidden]="emailinput.valid || emailinput.pristine">
               <strong>Please</strong> enter your e-mail.
             </div>
@@ -97,8 +97,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="register(LoginModal)" [disabled]="!loginForm.form.valid">Sign in</button>
-        <button type="button" class="btn btn-secondary">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="register(SignInModal)" [disabled]="!SignInForm.form.valid">Sign in</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>

@@ -13,7 +13,7 @@ export class HttpService {
   constructor(private http : Http){};
 
 
-  post(url: string, data : string) : Observable<any> {
+  post(url: string, data : any) : Observable<any> {
     return this.http.post(url, data, {headers: this.headers})
       .map(res => res.json());
   }
