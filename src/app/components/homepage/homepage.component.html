@@ -1,28 +1,30 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-faded poptop">
-    <div class="container">
-        <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" [routerLink]="['/homepage']">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pointer" data-toggle="modal" data-target="#LogoutModal">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" [routerLink]="['/homepage']">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
+
 <header class="bgImage">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded poptop">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bit Studio.</a>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="['/homepage']">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pointer" data-toggle="modal" data-target="#LogoutModal">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" [routerLink]="['/homepage']">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-14 text-center">
@@ -36,39 +38,45 @@
         </div>
     </div>
 </header>
-<div class="row">
-    <div class="col-md-3">
-        <span class="icon">
-            <i class="icon-eye"></i>
-        </span>
-        <div class="desc">
-            <h3>Retina Ready</h3>
-            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-            <p><a [routerLink]="['/homepage']" class="btn btn-primary">Learn More</a></p>
+<section id="about" class="bg-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" >
+                <div class="wrap-about">
+                    <div class="icon-box">
+                        <i class="fa fa-lightbulb-o fa-4x"></i>
+                    </div>
+                    <div class="about-content text-center">
+                        <h3 class="ddd">We're Creative</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="250ms">
+                <div class="wrap-about">
+                    <div class="icon-box">
+                        <i class="fa fa-users fa-4x"></i>
+                    </div>
+                    <div class="about-content text-center">
+                        <h3>We're Professional</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+                <div class="wrap-about kill-margin-bottom">
+                    <div class="icon-box">
+                        <i class="fa fa-users fa-4x"></i>
+                    </div>
+                    <div class="about-content text-center">
+                        <h3>We're Professional</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <span class="icon">
-            <i class="icon-eye"></i>
-        </span>
-        <div class="desc">
-            <h3>Retina Ready</h3>
-            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-            <p><a [routerLink]="['/homepage']" class="btn btn-primary">Learn More</a></p>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <span class="icon">
-            <i class="icon-eye"></i>
-        </span>
-        <div class="desc">
-            <h3>Retina Ready</h3>
-            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-            <p><a [routerLink]="['/homepage']" class="btn btn-primary">Learn More</a></p>
-        </div>
-    </div>
-
-</div>
+</section>
 
 <!-- Modal -->
 <div class="modal fade" id="LogoutModal" tabindex="-1" role="dialog" aria-labelledby="LogoutModalLabel" aria-hidden="true" #LoginModal>
