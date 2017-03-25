@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit{
       password: Md5.hashStr(this.password).toString(),
       email: this.email
     };
-    this.http.post(Constants.url + '/datainfo/usre/addUser', data).subscribe(
+    this.http.post(Constants.url + '/datainfo/user/addUser', data).subscribe(
       (result)=> {
         // $(modal).modal('hide');
         console.log(result);
