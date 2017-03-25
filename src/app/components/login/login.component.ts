@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from "../../service/auth.service";
 import {HttpService} from "../../service/http.service";
-import {Md5} from "ts-md5/dist/md5";
 import {Constants} from "../../constants/constants"
+import {Md5} from "ts-md5/dist/md5";
 
 declare var $ : any;
 
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit{
   private email : string;
 
   ngOnInit(): void {
-    this.username = window.localStorage.getItem('bit_forum_usernmae');
+    this.username = window.localStorage.getItem('bit_forum_username');
     this.password = window.localStorage.getItem('bit_forum_password');
     this.rememberme = (window.localStorage.getItem('bit_forum_rememberme') == '1');
   }
@@ -30,17 +30,15 @@ export class LoginComponent implements OnInit{
   login(modal : any): void {
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggedIn) {
-        // Get the redirect URL from our auth service
-        // If no redirect has been set, use the default
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/homepage';
         console.info(redirect);
         $(modal).modal('hide');
         if (this.rememberme){
-          window.localStorage.setItem('bit_forum_usernmae', this.username);
+          window.localStorage.setItem('bit_forum_username', this.username);
           window.localStorage.setItem('bit_forum_password', this.password);
           window.localStorage.setItem('bit_forum_rememberme', '1');
         }else {
-          window.localStorage.removeItem('bit_forum_usernmae');
+          window.localStorage.removeItem('bit_forum_username');
           window.localStorage.removeItem('bit_forum_password');
           window.localStorage.removeItem('bit_forum_rememberme');
         }
@@ -67,4 +65,6 @@ export class LoginComponent implements OnInit{
       }
     );
   }
+
+
 }
