@@ -5,6 +5,9 @@
       <button type="button" class="btn btn-primary loginBtn" data-toggle="modal" data-target="#LoginModal">
         Login!
       </button>
+      <button type="button" class="btn btn-primary loginBtn" data-toggle="modal" data-target="#SignInModal">
+        Register!
+      </button>
     </div>
   </div>
 </div>
@@ -33,7 +36,7 @@
             <label class="form-control-label" for="password">Password</label>
             <input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="Please input your password">
             <div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">
-              <strong>Please</strong> enter your passowrd.
+              <strong>Please</strong> enter your password.
             </div>
           </div>
           <div>
@@ -44,8 +47,58 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" [disabled]="!loginForm.form.valid">Login</button>
-        <button type="button" class="btn btn-secondary">Sign in</button>
+        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" [disabled]="!loginForm.form.valid">Register</button>
+        <button type="button" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true" #LoginModal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="SignInModalLabel">Sign in your account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #RegisterForm="ngForm">
+          <div class="form-group">
+            <label class="form-control-label" for="username">Username  <i class="fa fa-user-circle" aria-hidden="true"></i></label>
+            <input #usernameinput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="Please input your username">
+            <div class="alert alert-danger" role="alert"  [hidden]="usernameinput.valid || usernameinput.pristine">
+              <strong>Please</strong> enter your username.
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" for="password">Password</label>
+            <input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Please input your password">
+            <div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">
+              <strong>Please</strong> enter your password.
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" for="password">Password</label>
+            <input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Please input your password again">
+            <div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">
+              <strong>Please</strong> retry your password.
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" for="password">Password</label>
+            <input #passwordinput="ngModel" required type="email" [(ngModel)]="email" class="form-control" name="password" placeholder="Please input your e-mail">
+            <div class="alert alert-danger" role="alert" [hidden]="emailinput.valid || emailinput.pristine">
+              <strong>Please</strong> enter your e-mail.
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="register(LoginModal)" [disabled]="!loginForm.form.valid">Sign in</button>
+        <button type="button" class="btn btn-secondary">Cancel</button>
       </div>
     </div>
   </div>
