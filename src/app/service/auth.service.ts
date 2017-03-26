@@ -7,6 +7,7 @@ import 'rxjs/add/operator/delay';
 import {HttpService} from "./http.service";
 import {Constants} from "../constants/constants";
 import {Md5} from "ts-md5/dist/md5";
+import {Subscription} from "rxjs";
 
 @Injectable()
 export class AuthService {
@@ -18,19 +19,22 @@ export class AuthService {
     constructor(public http : HttpService) {
     }
 
-    login(username: string, password: string): Observable<boolean> {
-        this.http.post(Constants.url + '/datainfo/user/queryByUsername', {username: username}).subscribe(
+    login(username: string, password: string): Promise<boolean>{
+        return this.http.post(Constants.url + '/datainfo/user/queryByUsername', {username: username}).toPromise().then(
           (result)=> {
+            console.info(result);
             if(result.length > 0 && result[0].password == Md5.hashStr(password)){
               this.isLoggedIn = true;
+              return true;
             }else {
+              return false;
             }
           },
           (error)=> {
             console.info(error);
+            return false;
           }
-        );
-      return Observable.of(this.isLoggedIn);
+        )
     }
 
     logout(): void {

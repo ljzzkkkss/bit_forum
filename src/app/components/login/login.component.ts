@@ -51,8 +51,8 @@ export class LoginComponent implements OnInit{
   }
 
   login(modal : any): void {
-    this.authService.login(this.username, this.password).subscribe(() => {
-      if (this.authService.isLoggedIn) {
+    this.authService.login(this.username, this.password).then((result) => {
+      if (result) {
         this.loginvalidate = true;
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/homepage';
         console.info(redirect);
