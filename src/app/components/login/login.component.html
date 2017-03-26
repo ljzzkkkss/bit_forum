@@ -30,29 +30,32 @@
       <div class="modal-body">
         <form #loginForm="ngForm">
           <div class="form-group">
-            <label class="form-control-label" for="username">Username  <i class="fa fa-user-circle" aria-hidden="true"></i></label>
-            <input #usernameinput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" id="username" placeholder="Please input your username">
-            <div class="alert alert-danger" role="alert"  [hidden]="usernameinput.valid || usernameinput.pristine">
-              <strong>Please</strong> enter your username.
+            <label class="form-control-label" for="username">用户名  <i class="fa fa-user-circle" aria-hidden="true"></i></label>
+            <input #usernameInput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" id="username" placeholder="Please input your username">
+            <div class="alert alert-danger" role="alert"  [hidden]="usernameInput.valid || usernameInput.pristine">
+              <p>用户名不能为空</p>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-control-label" for="password">Password</label>
-            <input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="Please input your password">
-            <div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">
-              <strong>Please</strong> enter your password.
+            <label class="form-control-label" for="password">密码</label>
+            <input #passwordInput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="Please input your password">
+            <div class="alert alert-danger" role="alert" [hidden]="passwordInput.valid || passwordInput.pristine">
+              <p>密码不能为空</p>
             </div>
           </div>
           <div>
             <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" [(ngModel)]=rememberme name="rememberme" > Remember me
+              <input class="form-check-input" type="checkbox" [(ngModel)]=rememberme name="rememberme" > 记住密码
             </label>
           </div>
         </form>
+        <div class="alert alert-danger" role="alert" [hidden]="loginvalidate">
+          <p>用户名或密码错误</p>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" [disabled]="!loginForm.form.valid">Login</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="login(LoginModal)" [disabled]="!loginForm.form.valid">登陆</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
       </div>
     </div>
   </div>
@@ -63,7 +66,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="SignInModalLabel">Sign in your account</h5>
+        <h5 class="modal-title" id="SignInModalLabel">注册你的账号</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -71,38 +74,59 @@
       <div class="modal-body">
         <form #SignInForm="ngForm">
           <div class="form-group">
-            <label class="form-control-label" for="username">Username  <i class="fa fa-user-circle" aria-hidden="true"></i></label>
-            <input #usernameinput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="Please input your username">
-            <div class="alert alert-danger" role="alert"  [hidden]="usernameinput.valid || usernameinput.pristine">
-              <strong>Please</strong> enter your username.
+            <label class="form-control-label" for="username">用户名 <i class="fa fa-user-circle" aria-hidden="true"></i></label>
+            <input #signInUsernameInput="ngModel" type="text"required minlength="5" maxlength="8" [(ngModel)]="username" (keyup)="checkusername()" class="form-control" name="username" placeholder="请输入用户名">
+            <div class="alert alert-danger" role="alert"  [hidden]="(signInUsernameInput.valid || signInUsernameInput.pristine ) && usernamevalidate">
+              <label *ngIf="SignInForm.controls.username?.errors?.required">请输入用户名</label>
+              <label *ngIf="SignInForm.controls.username?.errors?.maxlength || SignInForm.controls.username?.errors?.minlength">用户名长度必须在5-8之间</label>
+              <label *ngIf="!usernamevalidate">该用户名已被注册</label>
             </div>
           </div>
           <div class="form-group">
             <label class="form-control-label" for="password">Password</label>
-            <input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Please input your password">
-            <div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">
-              <strong>Please</strong> enter your password.
+            <input #signInPasswordInput="ngModel" required validateEqual="confirmPassword" reverse="true" type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="请输入密码">
+            <div class="alert alert-danger" role="alert" [hidden]="signInPasswordInput.valid || signInPasswordInput.pristine">
+              <label *ngIf="SignInForm.controls.password?.errors?.required">请输入密码</label>
             </div>
           </div>
-          <!--<div class="form-group">-->
-            <!--<label class="form-control-label" for="password">Password</label>-->
-            <!--<input #passwordinput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Please input your password again">-->
-            <!--<div class="alert alert-danger" role="alert" [hidden]="passwordinput.valid || passwordinput.pristine">-->
-              <!--<strong>Please</strong> retry your password.-->
-            <!--</div>-->
-          <!--</div>-->
           <div class="form-group">
-            <label class="form-control-label" for="password">Email</label>
-            <input #emailinput="ngModel" required type="email" [(ngModel)]="email" class="form-control" name="email" placeholder="Please input your e-mail">
-            <div class="alert alert-danger" role="alert" [hidden]="emailinput.valid || emailinput.pristine">
-              <strong>Please</strong> enter your e-mail.
+            <label class="form-control-label">确认密码</label>
+            <input #confirmPassordInput="ngModel" required validateEqual="password" type="password" [(ngModel)]="confirmPassword"  class="form-control" name="confirmPassword" placeholder="请再次输入密码">
+            <div class="alert alert-danger" role="alert" [hidden]="confirmPassordInput.valid || confirmPassordInput.pristine">
+              <label *ngIf="SignInForm.controls.confirmPassword?.errors?.validateEqual">两次输入密码不一致</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" for="password">邮箱</label>
+            <input #emailInput="ngModel" required pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" type="email" [(ngModel)]="email"  class="form-control" name="email" placeholder="请输入邮箱">
+            <div class="alert alert-danger" role="alert" [hidden]="emailInput.valid || emailInput.pristine">
+              <label *ngIf="SignInForm.controls.email?.errors?.required">请输入邮箱</label>
+              <label *ngIf="SignInForm.controls.email?.errors?.pattern">邮箱格式错误</label>
             </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="register(SignInModal)" [disabled]="!SignInForm.form.valid">Sign in</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="register(SignInModal)" [disabled]="!SignInForm.form.valid || !usernamevalidate">注册</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ConfirmModal" tabindex="-1" role="dialog" aria-labelledby="ConfirmModalLabel" aria-hidden="true" #ConfirmModal>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ConfirmModalLabel">注册成功</h5>
+      </div>
+      <div class="modal-body">
+        恭喜你注册成功！
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirm()" >去登陆</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
       </div>
     </div>
   </div>
