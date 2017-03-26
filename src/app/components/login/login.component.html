@@ -4,12 +4,12 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-12 col-md-9">
         <button type="button" class="btn btn-primary loginBtn" data-toggle="modal" data-target="#LoginModal">
-          Login!
+          登陆
         </button>
       </div>
       <div class="col-4 col-md-3">
         <button type="button" class="btn btn-primary loginBtn" data-toggle="modal" data-target="#SignInModal">
-          Register!
+          注册
         </button>
       </div>
     </div>
@@ -22,7 +22,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="LoginModalLabel">Login</h5>
+        <h5 class="modal-title" id="LoginModalLabel">登录</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -31,14 +31,14 @@
         <form #loginForm="ngForm">
           <div class="form-group">
             <label class="form-control-label" for="username">用户名  <i class="fa fa-user-circle" aria-hidden="true"></i></label>
-            <input #usernameInput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" id="username" placeholder="Please input your username">
+            <input #usernameInput="ngModel" required type="text" [(ngModel)]="username" class="form-control" name="username" id="username" placeholder="请输入用户名">
             <div class="alert alert-danger" role="alert"  [hidden]="usernameInput.valid || usernameInput.pristine">
               <p>用户名不能为空</p>
             </div>
           </div>
           <div class="form-group">
             <label class="form-control-label" for="password">密码</label>
-            <input #passwordInput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="Please input your password">
+            <input #passwordInput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="请输入密码">
             <div class="alert alert-danger" role="alert" [hidden]="passwordInput.valid || passwordInput.pristine">
               <p>密码不能为空</p>
             </div>
