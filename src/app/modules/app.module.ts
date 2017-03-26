@@ -10,12 +10,15 @@ import { AppComponent } from '../components/root/app.component';
 import { HomepageComponent } from '../components/homepage/homepage.component';
 import {HttpService} from "../service/http.service";
 
+import { OwlModule } from 'ng2-owl-carousel';
+
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    OwlModule
   ],
   declarations: [
     LoginComponent,

@@ -12,6 +12,7 @@ declare var $ : any;
     templateUrl: 'homepage.component.html',
     styleUrls: ['homepage.component.css']
 })
+
 export class HomepageComponent {
   constructor(public authService: AuthService, public router: Router){
 
