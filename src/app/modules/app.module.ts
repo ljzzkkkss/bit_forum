@@ -11,7 +11,6 @@ import { EqualValidator } from '../validators/equal.validator';
 import { HomepageComponent } from '../components/homepage/homepage.component';
 import {HttpService} from "../service/http.service";
 
-import { OwlModule } from 'ng2-owl-carousel';
 
 @NgModule({
   imports: [
@@ -19,7 +18,6 @@ import { OwlModule } from 'ng2-owl-carousel';
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    OwlModule
   ],
   declarations: [
     LoginComponent,
