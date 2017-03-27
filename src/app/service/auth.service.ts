@@ -1,13 +1,10 @@
-import { Injectable } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
+import {Injectable} from "@angular/core";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/delay";
 import {HttpService} from "./http.service";
 import {Constants} from "../constants/constants";
 import {Md5} from "ts-md5/dist/md5";
-import {Subscription} from "rxjs";
 
 @Injectable()
 export class AuthService {
