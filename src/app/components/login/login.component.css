@@ -17,9 +17,6 @@ html,body{
 .row{
   height : 100%
 }
-.container{
-  height : 100%
-}
 .loginBtn:hover{
   opacity:0.85;
   filter:alpha(opacity=85);
@@ -27,18 +24,36 @@ html,body{
 .modal-dialog{
   top: 20%;
 }
+.loginContainer{
+  padding-top: 30%;
+}
 @media screen and ( max-width: 1200px ) and ( min-width: 750px ){
   .login {
     background-image: url("../../../resource/image/login/1200x747.jpg");
+  }
+  .loginContainer{
+    padding-top: 30%;
   }
 }
 @media screen and ( max-width: 750px ) and ( min-width: 640px ) {
   .login {
     background-image: url("../../../resource/image/login/750x1334.jpg");
   }
+  .loginContainer{
+    padding-top: 76%;
+  }
+  .loginBtn{
+    width: 350px;
+  }
 }
 @media screen and ( max-width: 640px ) {
   .login {
     background-image: url("../../../resource/image/login/640x1136.jpg");
+  }
+  .loginContainer{
+    padding-top: 76%;
+  }
+  .loginBtn{
+    width: 350px;
   }
 }
