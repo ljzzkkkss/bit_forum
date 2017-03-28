@@ -1372,7 +1372,7 @@
 			item = this.prepare(item);
 			this.$stage.append(item);
 			this._items.push(item);
-			this._mergers.push(item.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+			this._mergers.push(item.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
 		}, this));
 
 		this.reset($.isNumeric(this.settings.startPosition) ? this.settings.startPosition : 0);
@@ -1395,11 +1395,11 @@
 		if (this._items.length === 0 || position === this._items.length) {
 			this.$stage.append(content);
 			this._items.push(content);
-			this._mergers.push(content.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+			this._mergers.push(content.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
 		} else {
 			this._items[position].before(content);
 			this._items.splice(position, 0, content);
-			this._mergers.splice(position, 0, content.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+			this._mergers.splice(position, 0, content.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
 		}
 
 		this.invalidate('items');
@@ -2643,12 +2643,12 @@
 		this._handlers = {
 			'prepared.owl.carousel': $.proxy(function(e) {
 				if (this._core.settings.dotsData) {
-					this._templates.push($(e.content).find('[data-dot]').andSelf('[data-dot]').attr('data-dot'));
+					this._templates.push($(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot'));
 				}
 			}, this),
 			'add.owl.carousel': $.proxy(function(e) {
 				if (this._core.settings.dotsData) {
-					this._templates.splice(e.position, 0, $(e.content).find('[data-dot]').andSelf('[data-dot]').attr('data-dot'));
+					this._templates.splice(e.position, 0, $(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot'));
 				}
 			}, this),
 			'remove.owl.carousel prepared.owl.carousel': $.proxy(function(e) {
@@ -3014,7 +3014,7 @@
 				}
 			}, this),
 			'prepared.owl.carousel': $.proxy(function(e) {
-				var hash = $(e.content).find('[data-hash]').andSelf('[data-hash]').attr('data-hash');
+				var hash = $(e.content).find('[data-hash]').addBack('[data-hash]').attr('data-hash');
 				this._hashes[hash] = e.content;
 			}, this)
 		};
