@@ -22,13 +22,16 @@ section{
     text-align: center;
 }
 .row{
-    margin: 0!important;
+    margin: 5px!important;
 }
 .jumbotron{
     padding-top: 13rem!important;
 }
 .poptop{
     z-index:1000;
+}
+.owl-item{
+    width: 1170px;
 }
 .icon-box {
     position: relative;
@@ -102,9 +105,15 @@ section{
     .bgImage {
         background-image: url("../../../resource/image/homepage/750x1334.jpg");
     }
+    .owl-item{
+        width: 1502px;
+    }
 }
 @media screen and ( max-width: 640px ) {
     .bgImage {
         background-image: url("../../../resource/image/homepage/640x1136.jpg");
+    }
+    .owl-item{
+        width: 1376px;
     }
 }
