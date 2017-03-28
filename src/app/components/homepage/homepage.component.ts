@@ -27,7 +27,8 @@ export class HomepageComponent implements  OnInit{
         $('.owl-carousel').owlCarousel({
             center:true,
             items:1,
-            loop:true
+            loop:true,
+            autoplay:500
         });
     }
 
