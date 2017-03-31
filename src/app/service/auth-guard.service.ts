@@ -1,35 +1,59 @@
 import { Injectable }     from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router}    from '@angular/router';
 import {AuthService} from "./auth.service";
+import {HttpService} from "./http.service";
+import {Constants} from "../constants/constants";
+import {CookieUtil} from "../util/cookie.util";
 
 @Injectable()
 export class AuthGuard implements CanActivate{
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService, private router: Router,private http: HttpService) {}
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        let url: string = state.url;
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+      let url: string = state.url;
 
-        return this.checkLogin(url);
+      return this.checkLogin(url);
     }
 
-    checkLogin(url: string): boolean {
-        if (this.authService.isLoggedIn) {
-          if(url == '/login'){//如果是进登录页并且已经登陆l直接跳转首页
-            this.router.navigate(['/homepage']);
+    checkLogin(url: string): Promise<boolean> {
+      return this.http.post(Constants.url + '/datainfo/user/checkLogin', {username: CookieUtil.getCookie('USERNAME'),sessonid: CookieUtil.getCookie('SESSION_ID'),token: CookieUtil.getCookie('TOKEN')}).toPromise().then(
+        (result)=> {
+          console.info('AuthGuard - checkLogin: ',result);
+          if(result.success){
+            if(url == '/login'){//如果是进登录页并且已经登陆l直接跳转首页
+              this.router.navigate(['/homepage']);
+            }
+            CookieUtil.setCookie('TOKEN',result.token);
+            return true;
+          }else {
+            CookieUtil.delCookie('USERNAME');
+            CookieUtil.delCookie('SESSON_ID');
+            CookieUtil.delCookie('TOKEN');
+            // Store the attempted URL for redirecting
+            this.authService.redirectUrl = url == '/login' ? '/homepage' : url;
+
+            // Navigate to the login page with extras
+            if(url != '/login') {
+              this.router.navigate(['/login']);
+            }else{
+              return true;//如果是登陆直接跳转
+            }
+            return false;
           }
-          return true;
-        }
+        },
+        (error)=> {
+          // Store the attempted URL for redirecting
+          this.authService.redirectUrl = url == '/login' ? '/homepage' : url;
 
-        // Store the attempted URL for redirecting
-        this.authService.redirectUrl = url == '/login' ? '/homepage' : url;
-
-        // Navigate to the login page with extras
-        if(url != '/login') {
-          this.router.navigate(['/login']);
-        }else{
-          return true;//如果是登陆直接跳转
-        }
-        return false;
+          // Navigate to the login page with extras
+          if(url != '/login') {
+            this.router.navigate(['/login']);
+          }else{
+            return true;//如果是登陆直接跳转
+          }
+          console.info(error);
+          return false;
+        });
     }
 
 }

@@ -5,6 +5,7 @@ import {HttpService} from "../../service/http.service";
 import {Constants} from "../../constants/constants"
 import {Md5} from "ts-md5/dist/md5";
 import {Subject} from "rxjs";
+import {CookieUtil} from "../../util/cookie.util";
 
 declare var $ : any;
 
@@ -24,9 +25,8 @@ export class LoginComponent implements OnInit{
   private usernameterms = new Subject<string>();
 
   ngOnInit(): void {
-    this.username = window.localStorage.getItem('bit_forum_username');
-    this.password = window.localStorage.getItem('bit_forum_password');
-    this.rememberme = (window.localStorage.getItem('bit_forum_rememberme') == '1');
+    this.username = CookieUtil.getCookie('USERNAME');
+    this.rememberme = (CookieUtil.getCookie('REMEMBER') == '1');
     this.usernameterms
       .debounceTime(300)        // wait 300ms after each keystroke before considering the term
       .distinctUntilChanged()   // ignore if next search term is same as previous
@@ -51,22 +51,17 @@ export class LoginComponent implements OnInit{
   }
 
   login(modal : any): void {
-    this.authService.login(this.username, this.password).then((result) => {
+    this.authService.login(this.username, this.password,this.rememberme).then((result) => {
       if (result) {
         this.loginvalidate = true;
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/homepage';
         console.info(redirect);
         $(modal).modal('hide');
         if (this.rememberme){
-          window.localStorage.setItem('bit_forum_username', this.username);
-          window.localStorage.setItem('bit_forum_password', this.password);
-          window.localStorage.setItem('bit_forum_rememberme', '1');
+          CookieUtil.setCookie('REMEMBERME','1');
         }else {
-          window.localStorage.removeItem('bit_forum_username');
-          window.localStorage.removeItem('bit_forum_password');
-          window.localStorage.removeItem('bit_forum_rememberme');
+          CookieUtil.delCookie('REMEMBERME');
         }
-        window.localStorage.setItem('bit_forum_islogin', '1');
         // Redirect the user
         this.router.navigate([redirect]);
       }else{
@@ -81,9 +76,9 @@ export class LoginComponent implements OnInit{
       password: Md5.hashStr(this.password).toString(),
       email: this.email
     };
-    this.http.post(Constants.url + '/datainfo/user/addUser', data).subscribe(
+    this.http.post(Constants.url + '/datainfo/user/register', data).subscribe(
       (result)=> {
-        if(result.code == 200){
+        if(result.success){
           $(modal).modal('hide');
           $('#ConfirmModal').modal('show');
         }

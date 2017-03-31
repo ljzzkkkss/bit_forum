@@ -6,6 +6,9 @@ import {AuthService} from "../../service/auth.service";
 import {Router} from "@angular/router";
 
 import '../../../third-part/owlcarousel/owl.carousel.min.js';
+import {HttpService} from "../../service/http.service";
+import {Constants} from "../../constants/constants";
+import {CookieUtil} from "../../util/cookie.util";
 import '../../../third-part/jquery/jquery.countTo.js';
 
 declare var $ : any;
@@ -21,7 +24,7 @@ declare var $ : any;
 })
 
 export class HomepageComponent implements  OnInit{
-    constructor(public authService: AuthService, public router: Router){
+    constructor(public authService: AuthService, public router: Router,public http: HttpService){
     }
 
     ngOnInit(): void {
@@ -35,9 +38,16 @@ export class HomepageComponent implements  OnInit{
     }
 
     logout() {
-    this.authService.logout();
-    $('#LogoutModal').modal('hide');
-    window.localStorage.removeItem('bit_forum_islogin');
-    this.router.navigate(['/login']);
+      this.http.post(Constants.url + '/datainfo/user/logout', {username:CookieUtil.getCookie('USERNAME')}).subscribe(
+        (result)=> {
+          if(result.success){
+            $('#LogoutModal').modal('hide');
+            this.router.navigate(['/login']);
+          }
+        },
+        (error)=> {
+          console.info("error", error);
+        }
+      );
     }
 }

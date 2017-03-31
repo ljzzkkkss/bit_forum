@@ -5,25 +5,29 @@ import "rxjs/add/operator/delay";
 import {HttpService} from "./http.service";
 import {Constants} from "../constants/constants";
 import {Md5} from "ts-md5/dist/md5";
+import {CookieUtil} from "../util/cookie.util";
 
 @Injectable()
 export class AuthService {
-    isLoggedIn: boolean = (window.localStorage.getItem('bit_forum_islogin') == '1');
-
     // store the URL so we can redirect after logging in
     redirectUrl: string;
 
     constructor(public http : HttpService) {
     }
 
-    login(username: string, password: string): Promise<boolean>{
-        return this.http.post(Constants.url + '/datainfo/user/queryByUsername', {username: username}).toPromise().then(
+    login(username: string, password: string, rememberme: boolean): Promise<boolean>{
+        return this.http.post(Constants.url + '/datainfo/user/login', {username: username,password: Md5.hashStr(password),rememberme:rememberme}).toPromise().then(
           (result)=> {
             console.info(result);
-            if(result.length > 0 && result[0].password == Md5.hashStr(password)){
-              this.isLoggedIn = true;
+            if(result.success){
+              CookieUtil.setCookie('USERNAME',username);
+              CookieUtil.setCookie('SESSON_ID',result.sessonid);
+              CookieUtil.setCookie('TOKEN',result.token);
               return true;
             }else {
+              CookieUtil.delCookie('USERNAME');
+              CookieUtil.delCookie('SESSON_ID');
+              CookieUtil.delCookie('TOKEN');
               return false;
             }
           },
@@ -32,9 +36,5 @@ export class AuthService {
             return false;
           }
         )
-    }
-
-    logout(): void {
-        this.isLoggedIn = false;
     }
 }
