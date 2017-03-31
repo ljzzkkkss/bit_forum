@@ -6,6 +6,7 @@ import {AuthService} from "../../service/auth.service";
 import {Router} from "@angular/router";
 
 import '../../../third-part/owlcarousel/owl.carousel.min.js';
+import '../../../third-part/jquery/jquery.countTo.js';
 
 declare var $ : any;
 
@@ -30,6 +31,7 @@ export class HomepageComponent implements  OnInit{
             loop:true,
             autoplay:500
         });
+        $('.countTo').countTo();
     }
 
     logout() {

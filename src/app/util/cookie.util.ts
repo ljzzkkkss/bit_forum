@@ -7,7 +7,7 @@ export class CookieUtil {
 
     setCookie(name: string, value: string, expiredays?: string) : void{
         var exdate=new Date();
-        exdate.setDate(exdate.getDate() + expiredays);
+        exdate.setDate(parseInt(exdate.getDate() + expiredays));
         document.cookie = name +  "="  + escape(value) +
             ((expiredays==null) ? "" : ";expires="+exdate.toUTCString());
     }
