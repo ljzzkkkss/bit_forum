@@ -43,7 +43,7 @@ html,body{
     padding-top: 76%;
   }
   .loginBtn{
-    width: 350px;
+    width: 50%;
   }
 }
 @media screen and ( max-width: 640px ) {
@@ -54,6 +54,6 @@ html,body{
     padding-top: 76%;
   }
   .loginBtn{
-    width: 350px;
+    width: 50%;
   }
 }

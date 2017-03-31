@@ -9,6 +9,7 @@ import '../../../third-part/owlcarousel/owl.carousel.min.js';
 import {HttpService} from "../../service/http.service";
 import {Constants} from "../../constants/constants";
 import {CookieUtil} from "../../util/cookie.util";
+import '../../../third-part/jquery/jquery.countTo.js';
 
 declare var $ : any;
 
@@ -33,6 +34,7 @@ export class HomepageComponent implements  OnInit{
             loop:true,
             autoplay:500
         });
+        $('.countTo').countTo();
     }
 
     logout() {

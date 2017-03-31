@@ -30,8 +30,25 @@ section{
 .poptop{
     z-index:1000;
 }
+.border {
+    border-top: 1px solid #fff;
+    height: 1px;
+    margin: 15px auto 0;
+    position: relative;
+    width: 35%;
+}
 .owl-item{
     width: 1170px;
+}
+.title {
+    padding-bottom: 60px;
+    width : 100%;
+}
+.title h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 38px;
+    color: #fff;
 }
 .icon-box {
     position: relative;
@@ -95,6 +112,147 @@ section{
     bottom: -56.5685px;
     border-bottom: solid 4.2426px #ddd;
     border-left: solid 4.2426px #ddd;
+}
+#counter {
+    background-image: url(../../../resource/image/homepage/home2.jpg);
+    padding: 70px 0;
+}
+.counters-item {
+    border: 1px solid #4e595f;
+    padding-bottom: 30px;
+}
+
+.counters-item > div {
+    margin: 10px 0;
+}
+
+.counters-item span {
+    display: inline;
+    font-family: Oswald, sans-serif;
+    font-size: 35px;
+    line-height: 50px;
+}
+
+.counters-item i {
+    margin-bottom: 15px;
+}
+
+.counters-item h3 {
+    font-family: Ubuntu,sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+.parallax-section {
+    background-attachment: fixed !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#our-team {
+    padding: 70px 0;
+}
+.team-mate {
+    background-color: #303136;
+    border: 1px solid #4e595f;
+}
+.member-photo {
+    overflow: hidden;
+    position: relative;
+}
+
+.member-photo img {
+    -webkit-transition: all 0.6s ease 0s;
+    -moz-transition: all 0.6s ease 0s;
+    -o-transition: all 0.6s ease 0s;
+    transition: all 0.6s ease 0s;
+}
+
+.member-photo:hover img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.member-title {
+    border-bottom: 1px solid #4e595f;
+    padding: 10px 15px;
+}
+
+
+.member-photo .mask {
+    background-color: rgba(43, 44, 48, 0.8);
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    opacity: 0;
+    filter: alpha(opacity=0);
+
+    -webkit-transition: all 600ms ease-out 0s;
+    -moz-transition: all 600ms ease-out 0s;
+    -o-transition: all 600ms ease-out 0s;
+    transition: all 600ms ease-out 0s;
+
+    -webkit-transform: rotateY(180deg) scale(0.5,0.5);
+    -moz-transform: rotateY(180deg) scale(0.5,0.5);
+    -ms-transform: rotateY(180deg) scale(0.5,0.5);
+    -o-transform: rotateY(180deg) scale(0.5,0.5);
+    transform: rotateY(180deg) scale(0.5,0.5);
+}
+
+.member-photo:hover .mask {
+    cursor: pointer;
+    opacity: 1;
+    filter: alpha(opacity=100);
+
+    -webkit-transform: rotateY(0deg) scale(1,1);
+    -moz-transform: rotateY(0deg) scale(1,1);
+    -ms-transform: rotateY(0deg) scale(1,1);
+    -o-transform: rotateY(0deg) scale(1,1);
+    transform: rotateY(0deg) scale(1,1);
+}
+
+.team-mate h3 {
+    font-family: Ubuntu,sans-serif;
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+
+.member-info {
+    padding: 15px;
+}
+
+.mask ul {
+    text-align: center;
+    position: relative;
+    top: 125px;
+}
+
+.mask ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.mask ul li a {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 35px;
+}
+
+.mask ul li a:hover {
+    background-color: #6cb670;
+    border: 1px solid transparent;
 }
 @media screen and ( max-width: 1200px ) and ( min-width: 750px ){
     .bgImage {
