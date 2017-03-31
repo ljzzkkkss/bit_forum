@@ -21,12 +21,12 @@ export class AuthService {
             console.info(result);
             if(result.success){
               CookieUtil.setCookie('USERNAME',username);
-              CookieUtil.setCookie('SESSON_ID',result.sessonid);
+              CookieUtil.setCookie('SESSION_ID',result.sessonid);
               CookieUtil.setCookie('TOKEN',result.token);
               return true;
             }else {
               CookieUtil.delCookie('USERNAME');
-              CookieUtil.delCookie('SESSON_ID');
+              CookieUtil.delCookie('SESSION_ID');
               CookieUtil.delCookie('TOKEN');
               return false;
             }

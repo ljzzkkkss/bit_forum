@@ -16,18 +16,24 @@ export class AuthGuard implements CanActivate{
     }
 
     checkLogin(url: string): Promise<boolean> {
-      return this.http.post(Constants.url + '/datainfo/user/checkLogin', {username: CookieUtil.getCookie('USERNAME'),sessonid: CookieUtil.getCookie('SESSION_ID'),token: CookieUtil.getCookie('TOKEN')}).toPromise().then(
+      var data = {
+        username: CookieUtil.getCookie('USERNAME'),
+        sessionid: CookieUtil.getCookie('SESSION_ID'),
+        token: CookieUtil.getCookie('TOKEN'),
+        rememberme: CookieUtil.getCookie('REMEMBERME') == '1'
+      };
+      return this.http.post(Constants.url + '/datainfo/user/checkLogin', data).toPromise().then(
         (result)=> {
           console.info('AuthGuard - checkLogin: ',result);
           if(result.success){
+            CookieUtil.setCookie('TOKEN',result.token);
             if(url == '/login'){//如果是进登录页并且已经登陆l直接跳转首页
               this.router.navigate(['/homepage']);
             }
-            CookieUtil.setCookie('TOKEN',result.token);
             return true;
           }else {
             CookieUtil.delCookie('USERNAME');
-            CookieUtil.delCookie('SESSON_ID');
+            CookieUtil.delCookie('SESSION_ID');
             CookieUtil.delCookie('TOKEN');
             // Store the attempted URL for redirecting
             this.authService.redirectUrl = url == '/login' ? '/homepage' : url;
