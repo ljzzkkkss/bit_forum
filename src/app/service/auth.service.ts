@@ -25,7 +25,6 @@ export class AuthService {
               CookieUtil.setCookie('TOKEN',result.token);
               return true;
             }else {
-              CookieUtil.delCookie('USERNAME');
               CookieUtil.delCookie('SESSION_ID');
               CookieUtil.delCookie('TOKEN');
               return false;

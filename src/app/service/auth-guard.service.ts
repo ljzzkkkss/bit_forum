@@ -32,7 +32,6 @@ export class AuthGuard implements CanActivate{
             }
             return true;
           }else {
-            CookieUtil.delCookie('USERNAME');
             CookieUtil.delCookie('SESSION_ID');
             CookieUtil.delCookie('TOKEN');
             // Store the attempted URL for redirecting
