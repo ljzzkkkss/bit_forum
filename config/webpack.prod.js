@@ -24,7 +24,10 @@ module.exports = webpackMerge(commonConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
       mangle: {
-        keep_fnames: true
+        keep_fnames: true,
+        warnings: false,
+        drop_debugger: true,
+        drop_console: true//关闭控制台日志输出
       }
     }),
     new ExtractTextPlugin('[name].[hash].css'),
