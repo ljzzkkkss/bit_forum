@@ -9,6 +9,8 @@ import { AppComponent } from '../components/root/app.component';
 import { EqualValidator } from '../validators/equal.validator';
 
 import { HomepageComponent } from '../components/homepage/homepage.component';
+import { FourmsComponent } from '../components/forums/forums.component';
+import { NavbarComponent } from '../components/navbar/navbar.component';
 import {HttpService} from "../service/http.service";
 
 
@@ -23,7 +25,9 @@ import {HttpService} from "../service/http.service";
     LoginComponent,
     AppComponent,
     HomepageComponent,
-    EqualValidator
+    EqualValidator,
+    FourmsComponent,
+    NavbarComponent
   ],
   providers: [HttpService],
   bootstrap: [ AppComponent ]

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import{LoginComponent} from '../components/login/login.component'
 import{HomepageComponent} from '../components/homepage/homepage.component'
+import{FourmsComponent} from '../components/forums/forums.component'
 import {AuthGuard} from "../service/auth-guard.service";
 import {AuthService} from "../service/auth.service";
 
@@ -16,12 +17,14 @@ const routes: Routes = [
   },{
     path: 'homepage',
     canActivate: [AuthGuard],
+    component:HomepageComponent
+  },{
+    path: 'forums',
+    canActivate: [AuthGuard],
     children: [
       {
-        path: '',
-        children: [
-          { path: '', component: HomepageComponent }
-        ]
+        path: 'home',
+        component: FourmsComponent
       }
     ]
   }
