@@ -76,10 +76,10 @@
         <form #SignInForm="ngForm">
           <div class="form-group">
             <label class="form-control-label" for="username">用户名 <i class="fa fa-user-circle" aria-hidden="true"></i></label>
-            <input #signInUsernameInput="ngModel" type="text"required minlength="5" maxlength="8" [(ngModel)]="username" (keyup)="checkusername()" class="form-control" name="username" placeholder="请输入用户名">
+            <input #signInUsernameInput="ngModel" type="text"required minlength="5" maxlength="10" [(ngModel)]="username" (keyup)="checkusername()" class="form-control" name="username" placeholder="请输入用户名">
             <div class="alert alert-danger" role="alert"  [hidden]="(signInUsernameInput.valid || signInUsernameInput.pristine ) && usernamevalidate">
               <label *ngIf="SignInForm.controls.username?.errors?.required">请输入用户名</label>
-              <label *ngIf="SignInForm.controls.username?.errors?.maxlength || SignInForm.controls.username?.errors?.minlength">用户名长度必须在5-8之间</label>
+              <label *ngIf="SignInForm.controls.username?.errors?.maxlength || SignInForm.controls.username?.errors?.minlength">用户名长度必须在5-10之间</label>
               <label *ngIf="!usernamevalidate">该用户名已被注册</label>
             </div>
           </div>
