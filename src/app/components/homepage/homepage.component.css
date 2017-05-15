@@ -25,9 +25,6 @@ html::-webkit-scrollbar{
 .text-center{
     text-align: center;
 }
-.row{
-    margin: 5px!important;
-}
 .jumbotron{
     padding-top: 13rem!important;
 }
