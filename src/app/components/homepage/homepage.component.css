@@ -5,6 +5,10 @@ section{
     color: #ddd;
     padding: 70px;
 }
+html::-webkit-scrollbar{
+    width:0px;
+    height:0px;
+}
 .bgImage{
     background-image: url("../../../resource/image/homepage/1200x747.jpg");
     background-size: 100%;
