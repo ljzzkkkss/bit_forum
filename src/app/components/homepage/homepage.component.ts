@@ -36,18 +36,4 @@ export class HomepageComponent implements  OnInit{
         });
         $('.countTo').countTo();
     }
-
-    logout() {
-      this.http.post(Constants.url + '/datainfo/user/logout', {username:CookieUtil.getCookie('USERNAME')}).subscribe(
-        (result)=> {
-          if(result.success){
-            $('#LogoutModal').modal('hide');
-            this.router.navigate(['/login']);
-          }
-        },
-        (error)=> {
-          console.info("error", error);
-        }
-      );
-    }
 }

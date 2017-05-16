@@ -27,6 +27,9 @@ html,body{
 .loginContainer{
   padding-top: 30%;
 }
+.fr{
+  float:right;
+}
 @media screen and ( max-width: 1200px ) and ( min-width: 750px ){
   .login {
     background-image: url("../../../resource/image/login/1200x747.jpg");

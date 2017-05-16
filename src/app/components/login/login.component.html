@@ -39,6 +39,7 @@
           </div>
           <div class="form-group">
             <label class="form-control-label" for="password">密码</label>
+            <a href="javascript:;" class="fr">忘记密码?</a>
             <input #passwordInput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="请输入密码">
             <div class="alert alert-danger" role="alert" [hidden]="passwordInput.valid || passwordInput.pristine">
               <p>密码不能为空</p>

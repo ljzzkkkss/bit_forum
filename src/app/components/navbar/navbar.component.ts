@@ -11,6 +11,8 @@ import {Constants} from "../../constants/constants";
 import {CookieUtil} from "../../util/cookie.util";
 import '../../../third-part/jquery/jquery.countTo.js';
 
+declare var $ : any;
+
 @Component({
     selector: 'navbar',
     templateUrl: 'navbar.component.html',
@@ -25,5 +27,19 @@ export class NavbarComponent implements  OnInit{
 
     ngOnInit(): void {
 
+    }
+
+    logout() {
+        this.http.post(Constants.url + '/datainfo/user/logout', {username:CookieUtil.getCookie('USERNAME')}).subscribe(
+            (result)=> {
+                if(result.success){
+                    $('#LogoutModal').modal('hide');
+                    this.router.navigate(['/login']);
+                }
+            },
+            (error)=> {
+                console.info("error", error);
+            }
+        );
     }
 }
