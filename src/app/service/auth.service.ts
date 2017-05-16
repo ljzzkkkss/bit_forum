@@ -20,9 +20,9 @@ export class AuthService {
           (result)=> {
             console.info(result);
             if(result.success){
-              CookieUtil.setCookie('USERNAME',username);
-              CookieUtil.setCookie('SESSION_ID',result.sessonid);
-              CookieUtil.setCookie('TOKEN',result.token);
+              CookieUtil.setCookie('USERNAME',username,7);
+              CookieUtil.setCookie('SESSION_ID',result.sessonid,7);
+              CookieUtil.setCookie('TOKEN',result.token,7);
               return true;
             }else {
               CookieUtil.delCookie('SESSION_ID');

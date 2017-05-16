@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate{
         (result)=> {
           console.info('AuthGuard - checkLogin: ',result);
           if(result.success){
-            CookieUtil.setCookie('TOKEN',result.token);
+            CookieUtil.setCookie('TOKEN',result.token,7);
             if(url == '/login'){//如果是进登录页并且已经登陆l直接跳转首页
               this.router.navigate(['/homepage']);
             }

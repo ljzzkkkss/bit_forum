@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit{
         console.info(redirect);
         $(modal).modal('hide');
         if (this.rememberme){
-          CookieUtil.setCookie('REMEMBERME','1');
+          CookieUtil.setCookie('REMEMBERME','1',7);
         }else {
           CookieUtil.delCookie('REMEMBERME');
         }
