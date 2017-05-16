@@ -39,7 +39,7 @@
           </div>
           <div class="form-group">
             <label class="form-control-label" for="password">密码</label>
-            <a href="javascript:;" class="fr">忘记密码?</a>
+            <a href="javascript:;" class="fr" data-toggle="modal" data-dismiss="modal" data-target="#FindPasswordModal">忘记密码?</a>
             <input #passwordInput="ngModel" required type="password" [(ngModel)]="password" class="form-control" name="password" id="password" placeholder="请输入密码">
             <div class="alert alert-danger" role="alert" [hidden]="passwordInput.valid || passwordInput.pristine">
               <p>密码不能为空</p>
@@ -133,3 +133,35 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="FindPasswordModal" tabindex="-1" role="dialog" aria-labelledby="FindPasswordModalLabel" aria-hidden="true" #FindPasswordModal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="FindPasswordModalLabel">找回密码</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #FindPasswordForm="ngForm">
+          <div class="form-group">
+            <label class="form-control-label" for="username">用户名 <i class="fa fa-user-circle" aria-hidden="true"></i></label>
+            <input #findPasswordUsername="ngModel" type="text"required minlength="5" maxlength="10" [(ngModel)]="username" (keyup)="checkusername()" class="form-control" name="username" placeholder="请输入要找回的用户名">
+            <div class="alert alert-danger" role="alert"  [hidden]="(findPasswordUsername.valid || findPasswordUsername.pristine ) && !usernamevalidate">
+              <label *ngIf="SignInForm.controls.username?.errors?.required">请输入用户名</label>
+              <label *ngIf="usernamevalidate">该用户未注册</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" [disabled]="!FindPasswordForm.form.valid || !usernamevalidate">发送邮件</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
