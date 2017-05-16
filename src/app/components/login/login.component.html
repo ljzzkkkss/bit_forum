@@ -151,14 +151,14 @@
             <label class="form-control-label" for="username">用户名 <i class="fa fa-user-circle" aria-hidden="true"></i></label>
             <input #findPasswordUsername="ngModel" type="text"required minlength="5" maxlength="10" [(ngModel)]="username" (keyup)="checkusername()" class="form-control" name="username" placeholder="请输入要找回的用户名">
             <div class="alert alert-danger" role="alert"  [hidden]="(findPasswordUsername.valid || findPasswordUsername.pristine ) && !usernamevalidate">
-              <label *ngIf="SignInForm.controls.username?.errors?.required">请输入用户名</label>
+              <label *ngIf="FindPasswordForm.controls.username?.errors?.required">请输入用户名</label>
               <label *ngIf="usernamevalidate">该用户未注册</label>
             </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" [disabled]="!FindPasswordForm.form.valid || !usernamevalidate">发送邮件</button>
+        <button type="button" class="btn btn-primary" [disabled]="!FindPasswordForm.form.valid || usernamevalidate">发送邮件</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
       </div>
     </div>
