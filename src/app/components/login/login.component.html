@@ -158,7 +158,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" [disabled]="!FindPasswordForm.form.valid || usernamevalidate">发送邮件</button>
+        <button type="button" class="btn btn-primary" [disabled]="!FindPasswordForm.form.valid || usernamevalidate" (click)="findpassword()">发送邮件</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
       </div>
     </div>

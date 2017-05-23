@@ -94,6 +94,18 @@ export class LoginComponent implements OnInit{
    $('#LoginModal').modal('show');
  }
 
+ findpassword() : void{
+   this.http.post(Constants.url + '/datainfo/user/findpassword', {username: this.username})
+ .subscribe(
+     (result)=> {
+       console.info(result);
+     },
+     (error)=> {
+       console.info(error);
+     }
+   );
+ }
+
  checkusername(){
   this.usernameterms.next(this.username);
  }
