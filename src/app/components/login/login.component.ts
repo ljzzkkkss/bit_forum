@@ -99,6 +99,10 @@ export class LoginComponent implements OnInit{
  .subscribe(
      (result)=> {
        console.info(result);
+       if(result.success){
+         $('#FindPasswordModal').modal('hide');
+         $('#MailSuccessModal').modal('show');
+       }
      },
      (error)=> {
        console.info(error);
