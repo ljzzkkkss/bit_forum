@@ -1,0 +1,83 @@
+<!-- Button trigger modal -->
+<div class="all login align-items-center">
+  <div class="container loginContainer">
+    <div class="row justify-content-md-center">
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ResetPassModal" tabindex="-1" role="dialog" aria-labelledby="ResetPassModalLabel" aria-hidden="true" #ResetPassModal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ResetPassModalLabel">重置密码</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #ResetPassForm="ngForm">
+          <div class="form-group">
+            <label class="form-control-label" >用户名： {{username}}</label>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" >密码</label>
+            <input #resetPassInput="ngModel" required validateEqual="confirmPassword" reverse="true" type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="请输入密码">
+            <div class="alert alert-danger" role="alert" [hidden]="resetPassInput.valid || resetPassInput.pristine">
+              <label *ngIf="ResetPassForm.controls.password?.errors?.required">请输入密码</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label">确认密码</label>
+            <input #confirmPassordInput="ngModel" required validateEqual="password" type="password" [(ngModel)]="confirmPassword"  class="form-control" name="confirmPassword" placeholder="请再次输入密码">
+            <div class="alert alert-danger" role="alert" [hidden]="confirmPassordInput.valid || confirmPassordInput.pristine">
+              <label *ngIf="ResetPassForm.controls.confirmPassword?.errors?.validateEqual">两次输入密码不一致</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="resetpass(ResetPassModal)" [disabled]="!ResetPassForm.form.valid">确认重置</button>
+        <button type="button" class="btn btn-secondary" (click)="login()" data-dismiss="modal">返回登陆</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="MessageModal" tabindex="-1" role="dialog" aria-labelledby="MessageModalLabel" aria-hidden="true" #MessageModal>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="MessageModalLabel">提示</h5>
+      </div>
+      <div class="modal-body">
+        链接已失效！
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="login()" data-dismiss="modal" >确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ConfirmModal" tabindex="-1" role="dialog" aria-labelledby="ConfirmModalLabel" aria-hidden="true" #ConfirmModal>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ConfirmModalLabel">修改成功</h5>
+      </div>
+      <div class="modal-body">
+        恭喜修改成功！
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="login()" >去登陆</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
