@@ -14,11 +14,14 @@ import { FourmsComponent } from '../components/forums/forums.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import {HttpService} from "../service/http.service";
 
+import {CKEditorModule} from 'ng2-ckeditor';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CKEditorModule,
     FormsModule,
     HttpModule,
   ],

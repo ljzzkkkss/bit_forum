@@ -11,6 +11,7 @@ import {Constants} from "../../constants/constants";
 import {CookieUtil} from "../../util/cookie.util";
 import '../../../third-part/jquery/jquery.countTo.js';
 
+
 declare var $ : any;
 
 @Component({

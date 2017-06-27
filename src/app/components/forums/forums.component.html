@@ -1,59 +1,16 @@
-<div class="bgImage">
+<div class="forumBgImage">
     <navbar></navbar>
     <div class="container forumContainer">
         <div class="row">
-            <div id="list-example" class="list-group col col-xl-4">
-                <a class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
-                   href="#list-item-1">
-                    Item1
-                    <span class="badge badge-default badge-pill">14</span>
-                </a>
-                <a class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
-                   href="#list-item-2">
-                    Item2
-                    <span class="badge badge-default badge-pill">2</span>
-                </a>
-                <a class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
-                   href="#list-item-3">
-                    Item3
-                    <span class="badge badge-default badge-pill">1</span>
-                </a>
-                <a class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
-                   href="#list-item-4">
-                    Item4
-                    <span class="badge badge-default badge-pill">1</span>
-                </a>
-            </div>
-            <div id="context" data-spy="scroll" data-target="#list-example" data-offset="0" class="col col-xl-8 scrollspy-example">
-                <h4 id="list-item-1">Item 1</h4>
-                <p>111Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna
-                    ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat
-                    laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla
-                    magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim
-                    reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non
-                    fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
-                <h4 id="list-item-2">Item 2</h4>
-                <p>222Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna
-                    ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat
-                    laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla
-                    magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim
-                    reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non
-                    fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
-                <h4 id="list-item-3">Item 3</h4>
-                <p>333Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna
-                    ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat
-                    laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla
-                    magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim
-                    reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non
-                    fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
-                <h4 id="list-item-4">Item 4</h4>
-                <p>444Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna
-                    ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat
-                    laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla
-                    magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim
-                    reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non
-                    fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
-            </div>
+            <ckeditor
+                    [(ngModel)]="ckeditorContent"
+                    [config]="{uiColor: '#99000'}"
+                    (change)="onChange($event)"
+                    (ready)="onReady($event)"
+                    (focus)="onFocus($event)"
+                    (blur)="onBlur($event)"
+                    debounce="500">
+            </ckeditor>
         </div>
     </div>
 </div>
