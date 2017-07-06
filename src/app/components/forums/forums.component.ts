@@ -16,7 +16,8 @@ declare var $ : any;
     selector: 'forums',
     templateUrl: 'forums.component.html',
     styleUrls: [
-        'forums.component.css'
+        'forums.component.css',
+        '../../../third-part/css/froala_editor.pkgd.min.css'
     ]
 })
 

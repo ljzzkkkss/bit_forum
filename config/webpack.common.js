@@ -2,7 +2,6 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ProvidePlugin = require('webpack/lib/ProvidePlugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
@@ -13,11 +12,6 @@ module.exports = {
       'app': './src/main.ts',
       'twbs':'bootstrap-loader'
   },
-
-  link:[
-      { rel: 'stylesheet', href: '/assets/font-awesome/css/font-awesome.min.css' },
-      { rel: 'stylesheet', href: '/assets/froala-editor/css/froala_editor.pkgd.min.css' }
-  ],
 
   resolve: {
     extensions: ['.ts', '.js']
@@ -116,7 +110,6 @@ module.exports = {
           to: 'assets/font-awesome/fonts'
       }
     ]),
-    new ExtractTextPlugin('src/assets/froala-editor/css/froala_editor.pkgd.min.css'),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       favicon: 'src/logo.ico'
