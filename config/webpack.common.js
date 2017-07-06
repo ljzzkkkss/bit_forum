@@ -13,12 +13,6 @@ module.exports = {
       'app': './src/main.ts',
       'twbs':'bootstrap-loader'
   },
-
-  link:[
-      { rel: 'stylesheet', href: '/assets/font-awesome/css/font-awesome.min.css' },
-      { rel: 'stylesheet', href: '/assets/froala-editor/css/froala_editor.pkgd.min.css' }
-  ],
-
   resolve: {
     extensions: ['.ts', '.js']
   },
