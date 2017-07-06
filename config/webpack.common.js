@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ProvidePlugin = require('webpack/lib/ProvidePlugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
@@ -11,6 +13,11 @@ module.exports = {
       'app': './src/main.ts',
       'twbs':'bootstrap-loader'
   },
+
+  link:[
+      { rel: 'stylesheet', href: '/assets/font-awesome/css/font-awesome.min.css' },
+      { rel: 'stylesheet', href: '/assets/froala-editor/css/froala_editor.pkgd.min.css' }
+  ],
 
   resolve: {
     extensions: ['.ts', '.js']
@@ -95,7 +102,21 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
-
+    new CopyWebpackPlugin([
+      {
+          from: 'node_modules/froala-editor/css/',
+          to: 'assets/froala-editor/css/',
+      },
+      {
+          from: 'node_modules/font-awesome/css/font-awesome.min.css',
+          to: 'assets/font-awesome/css/font-awesome.min.css',
+      },
+      {
+          from: 'node_modules/font-awesome/fonts',
+          to: 'assets/font-awesome/fonts'
+      }
+    ]),
+    new ExtractTextPlugin('src/assets/froala-editor/css/froala_editor.pkgd.min.css'),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       favicon: 'src/logo.ico'
