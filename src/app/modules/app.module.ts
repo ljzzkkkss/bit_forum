@@ -14,16 +14,19 @@ import { FourmsComponent } from '../components/forums/forums.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import {HttpService} from "../service/http.service";
 
-import {CKEditorModule} from 'ng2-ckeditor';
+import "froala-editor/js/froala_editor.pkgd.min.js";
+import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
+
 
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CKEditorModule,
     FormsModule,
     HttpModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
   ],
   declarations: [
     LoginComponent,

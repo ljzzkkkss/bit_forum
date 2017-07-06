@@ -2,15 +2,10 @@
     <navbar></navbar>
     <div class="container forumContainer">
         <div class="row">
-            <ckeditor
-                    [(ngModel)]="ckeditorContent"
-                    [config]="{uiColor: '#99000'}"
-                    (change)="onChange($event)"
-                    (ready)="onReady($event)"
-                    (focus)="onFocus($event)"
-                    (blur)="onBlur($event)"
-                    debounce="500">
-            </ckeditor>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-9">
+                <div [froalaEditor]>Hello, Froala!</div>
+            </div>
         </div>
     </div>
 </div>

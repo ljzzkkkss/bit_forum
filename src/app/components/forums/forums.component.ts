@@ -4,8 +4,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
 import {Router} from "@angular/router";
-
-import '../../../third-part/owlcarousel/owl.carousel.min.js';
 import {HttpService} from "../../service/http.service";
 import {Constants} from "../../constants/constants";
 import {CookieUtil} from "../../util/cookie.util";
