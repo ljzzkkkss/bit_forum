@@ -26,7 +26,7 @@
     "jquery": "^3.1.1",
     "owl.carousel": "^2.2.0",
     "postcss": "^5.2.16",
-    "rxjs": "5.0.1",
+    "rxjs": "5.4.2",
     "script-loader": "^0.7.0",
     "ts-md5": "^1.2.0",
     "zone.js": "^0.7.4"
@@ -62,7 +62,7 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.13.2",
     "to-string-loader": "^1.1.5",
-    "typescript": "^2.1.6",
+    "typescript": "^2.4.1",
     "url-loader": "^0.5.8",
     "webpack": "2.2.0",
     "webpack-dev-server": "2.2.0-rc.0",
