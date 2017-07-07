@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit,HostListener} from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from "../../service/auth.service";
 import {HttpService} from "../../service/http.service";
@@ -14,6 +14,7 @@ declare var $ : any;
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css']
 })
+
 export class LoginComponent implements OnInit{
   private username : string;
   private password : string;
@@ -68,6 +69,16 @@ export class LoginComponent implements OnInit{
         this.loginvalidate = false;
       }
     });
+  }
+
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent , modal : any) {
+      event.preventDefault();
+      event.stopPropagation();
+      if(event.keyCode === 13){
+          // $(modal).modal('hide');
+          // this.login(modal);
+      }
   }
 
   register(modal: any) : void {
