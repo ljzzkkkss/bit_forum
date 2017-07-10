@@ -8,6 +8,8 @@ import {HttpService} from "../../service/http.service";
 import {Constants} from "../../constants/constants";
 import {CookieUtil} from "../../util/cookie.util";
 import '../../../third-part/jquery/jquery.countTo.js';
+import '../../../third-part/timeline/js/jquery.eeyellow.Timeline.js';
+import '../../../third-part/owlcarousel/owl.carousel.min.js';
 
 
 declare var $ : any;
@@ -16,7 +18,8 @@ declare var $ : any;
     selector: 'forums',
     templateUrl: 'forums.component.html',
     styleUrls: [
-        'forums.component.css'
+        'forums.component.css',
+        '../../../third-part/timeline/css/jquery.eeyellow.Timeline.css'
     ]
 })
 
@@ -25,7 +28,21 @@ export class FourmsComponent implements  OnInit{
     }
 
     ngOnInit(): void {
+        $('.VivaTimeline').vivaTimeline({
+            carousel: true,
+            carouselTime: 3000
+        });
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 400) {
+                $("#scrollUp").fadeIn(200);
+            } else {
+                $("#scrollUp").fadeOut(200);
+            }
+        });
+    }
 
+    scrollTop() : void{
+        window.scrollTo(0,0);
     }
 
     logout() {

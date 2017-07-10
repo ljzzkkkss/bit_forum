@@ -42,9 +42,11 @@ export class HomepageComponent implements  OnInit{
                 $("#scrollUp").fadeOut(200);
             }
         });
+
     }
 
     scrollTop() : void{
         window.scrollTo(0,0);
     }
+
 }
