@@ -35,5 +35,16 @@ export class HomepageComponent implements  OnInit{
             autoplay:500
         });
         $('.countTo').countTo();
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 400) {
+                $("#scrollUp").fadeIn(200);
+            } else {
+                $("#scrollUp").fadeOut(200);
+            }
+        });
+    }
+
+    scrollTop() : void{
+        window.scrollTo(0,0);
     }
 }

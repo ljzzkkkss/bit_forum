@@ -255,6 +255,23 @@ html::-webkit-scrollbar{
     background-color: #6cb670;
     border: 1px solid transparent;
 }
+
+#scrollUp {
+    border: 1px solid #4e595f;
+    bottom: 15px;
+    color: #fff;
+    display: none;
+    padding: 8px 12px;
+    position: fixed;
+    right: 20px;
+    z-index: 600;
+}
+
+#scrollUp:hover {
+    background-color: #6cb670;
+    border: 1px solid #6cb670;
+}
+
 @media screen and ( max-width: 1200px ) and ( min-width: 750px ){
     .bgImage {
         background-image: url("../../../resource/image/homepage/1200x747.jpg");
