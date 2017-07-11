@@ -7,7 +7,7 @@
     text-align: center;
 }
 .forumContainer{
-    top: 80px;
+    padding-top: 80px;
     left: -5%;
 }
 
@@ -24,9 +24,51 @@
     float: left;
 }
 
+.plusEvent::before {
+    border-color: transparent !important;
+}
+
+.plusEvent {
+    background-color: transparent !important;
+    text-align: right;
+    color: #ffffff;
+    font-weight: bold;
+}
+
 #context{
     height:600px;
     overflow-y: scroll;
+}
+
+.openEditor {
+     position: absolute;
+     top: 40px;
+     left: 50%;
+     z-index: 200;
+     width: 22px;
+     height: 22px;
+     margin-left: -11px;
+     background: #ffffff url("../../../resource/image/forums/openEditor.png");
+     background-size: 100%;
+     border-radius: 50%;
+     -webkit-border-radius: 50%;
+     -moz-border-radius: 50%
+ }
+
+.closeEditor {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    z-index: 200;
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+    background: #ffffff url("../../../resource/image/forums/closeEditor.png");
+    background-size: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+
 }
 
 #context::-webkit-scrollbar{

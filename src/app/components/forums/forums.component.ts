@@ -28,16 +28,36 @@ export class FourmsComponent implements  OnInit{
     }
 
     ngOnInit(): void {
+        //init rich-text-editor
+        $('.editor').froalaEditor('destroy');
+        //init TimeLine
         $('.VivaTimeline').vivaTimeline({
             carousel: true,
             carouselTime: 3000
         });
+        //init ScrollUp
         $(window).scroll(function() {
             if ($(window).scrollTop() > 400) {
                 $("#scrollUp").fadeIn(200);
             } else {
                 $("#scrollUp").fadeOut(200);
             }
+        });
+        $('#editorBtn').on('click', function (e) {
+            if($('#editorBtn').attr("class")=="openEditor"){
+                e.preventDefault();
+                if (!$('.editor').data('froala.editor')) {
+                    $('.editor').froalaEditor();
+                    $('#editorBtn').attr("class","closeEditor");
+                }
+            }else{
+                e.preventDefault();
+                if ($('.editor').data('froala.editor')) {
+                    $('.editor').froalaEditor('destroy');
+                    $('#editorBtn').attr("class","openEditor");
+                }
+            }
+
         });
     }
 
