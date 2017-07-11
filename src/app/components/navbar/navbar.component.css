@@ -2,8 +2,10 @@
     background-color: transparent!important;
 }
 .navbar{
-    position: absolute!important;
+    position: fixed!important;
     width: 100%;
+    left: 0;
+    top: 0;
  }
 .text-center{
     text-align: center;

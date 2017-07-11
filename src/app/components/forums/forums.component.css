@@ -1,6 +1,7 @@
 .forumBgImage{
     background: transparent url("../../../resource/image/forums/1460x839.png") no-repeat fixed;
     width: 100%;
+    background-size: 100%;
 }
 
 .text-center{
