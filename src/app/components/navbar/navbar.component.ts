@@ -22,11 +22,13 @@ declare var $ : any;
 })
 
 export class NavbarComponent implements  OnInit{
+    private url : string;
     constructor(public authService: AuthService, public router: Router,public http: HttpService){
     }
 
     ngOnInit(): void {
-
+        this.url = this.router.url;
+        console.info(this.url)
     }
 
     logout() {
