@@ -1,11 +1,21 @@
-.bg-faded{
-    background-color: transparent!important;
+.navbar::before{
+    content: "";
+    position: fixed;
+    z-index:-1;
+    background-color: #ffffff;
+    opacity: 0.5;
+    display: block;
+    width: 100%;
+    height: 45px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .navbar{
     position: fixed!important;
     width: 100%;
     left: 0;
     top: 0;
+    padding: 0 !important;
+
  }
 .text-center{
     text-align: center;
