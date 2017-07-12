@@ -8,10 +8,9 @@ import {Router} from "@angular/router";
 import '../../../third-part/owlcarousel/owl.carousel.min.js';
 import {HttpService} from "../../service/http.service";
 import '../../../third-part/jquery/jquery.countTo.js';
-import '../../../third-part/jquery/wow.min.js';
+import WOW from 'wowjs';
 
 declare var $ : any;
-declare var WOW : any;
 
 @Component({
     selector: 'homepage',
@@ -44,7 +43,7 @@ export class HomepageComponent implements  OnInit{
             }
         });
 
-        var wow = new WOW({
+        var wow = new WOW.WOW({
             animateClass: 'animated',
             offset: 120
         });
