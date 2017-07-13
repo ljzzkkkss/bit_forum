@@ -4,20 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { EqualValidator } from '../validators/equal.validator';
+
+
+import { ResetPassComponent } from '../components/resetpass/resetpass.component'
 import { LoginComponent } from '../components/login/login.component';
 import { AppComponent } from '../components/root/app.component';
-import { EqualValidator } from '../validators/equal.validator';
-import{ResetPassComponent} from '../components/resetpass/resetpass.component'
+import { HttpService } from "../service/http.service";
 
-import { HomepageComponent } from '../components/homepage/homepage.component';
-import { FourmsComponent } from '../components/forums/forums.component';
-import { NavbarComponent } from '../components/navbar/navbar.component';
-import {HttpService} from "../service/http.service";
-
-import "froala-editor/js/froala_editor.pkgd.min.js";
 import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
-
-
 
 @NgModule({
   imports: [
@@ -31,10 +26,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
   declarations: [
     LoginComponent,
     AppComponent,
-    HomepageComponent,
     EqualValidator,
-    FourmsComponent,
-    NavbarComponent,
     ResetPassComponent
   ],
   providers: [HttpService],

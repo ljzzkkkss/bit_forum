@@ -7,18 +7,18 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" [ngClass] = "{active: url=='/homepage'}">
-                        <a class="nav-link pointer" [routerLink]="['/homepage']">Home </a>
+                        <a class="nav-link pointer" [routerLink]="['/homepage']">首页</a>
                 </li>
                 <li class="nav-item" [ngClass] = "{active: url=='/forums/home'}">
-                    <a class="nav-link pointer" [routerLink]="['/forums/home']">Forums</a>
+                    <a class="nav-link pointer" [routerLink]="['/forums/home']">论坛</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link pointer" data-toggle="modal" data-target="#LogoutModal">Logout</a>
+                    <a class="nav-link pointer" data-toggle="modal" data-target="#LogoutModal">注销</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="text" placeholder="搜索">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
             </form>
         </div>
     </div>
@@ -29,14 +29,14 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="LogoutModalLabel">Logout</h5>
+                <h5 class="modal-title" id="LogoutModalLabel">注销</h5>
             </div>
             <div class="modal-body">
-                Are you sure to logout?
+                确定注销?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" (click)="logout()" >Logout</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="logout()" >确定</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
             </div>
         </div>
     </div>
