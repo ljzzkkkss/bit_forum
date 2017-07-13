@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 import '../../../third-part/owlcarousel/owl.carousel.min.js';
 import {HttpService} from "../../service/http.service";
 import '../../../third-part/jquery/jquery.countTo.js';
+import '../../../third-part/jquery/jquery.appear.js';
 import WOW from 'wowjs';
 
 declare var $ : any;
@@ -29,12 +30,47 @@ export class HomepageComponent implements  OnInit{
 
     ngOnInit(): void {
         $('.owl-carousel').owlCarousel({
-            center:true,
-            items:1,
-            loop:true,
-            autoplay:500
+            items: 1,
+            loop: true,
+            lazyLoad: true,
+            animateOut: 'slideOutDown',
+            animateIn: 'flipInX',
+            margin:30,
+            stagePadding:30,
+            smartSpeed:450,
+            autoplay: true,
+            autoplayTimeout: 300,
+            autoplayHoverPause: true
         });
-        $('.countTo').countTo();
+
+        (function() {
+            var count = {
+                initialized : false,
+                initialize : function() {
+                    if (this.initialized)
+                        return;
+                    this.initialized = true;
+                    this.build();
+                },
+                build : function() {
+                    this.animations();
+                },
+                animations : function() {
+                    // Count To
+                    $(".counters-item [data-to]").each(function() {
+                        var $this = $(this);
+                        $this.appear(function() {
+                            $this.countTo({});
+                        }, {
+                            accX : 0,
+                            accY : -150
+                        });
+                    });
+                },
+            };
+            count.initialize();
+        })();
+
         $(window).scroll(function() {
             if ($(window).scrollTop() > 400) {
                 $("#scrollUp").fadeIn(200);

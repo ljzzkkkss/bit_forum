@@ -16,7 +16,7 @@
 <section id="about" class="bg-one">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-center" data-wow-duration="500ms" >
+            <div class="col-md-4 text-center wow bounceInUp" data-wow-duration="500ms">
                 <div class="wrap-about">
                     <div class="icon-box">
                         <i class="fa fa-lightbulb-o fa-4x"></i>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center" data-wow-duration="500ms" data-wow-delay="250ms">
+            <div class="col-md-4 text-center wow bounceInUp" data-wow-duration="500ms" data-wow-delay="250ms">
                 <div class="wrap-about">
                     <div class="icon-box">
                         <i class="fa fa-users fa-4x"></i>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center "data-wow-duration="500ms" data-wow-delay="500ms">
+            <div class="col-md-4 text-center wow bounceInUp" data-wow-duration="500ms" data-wow-delay="500ms">
                 <div class="wrap-about kill-margin-bottom">
                     <div class="icon-box">
                         <i class="fa fa-users fa-4x"></i>
@@ -53,40 +53,36 @@
     </div>
 </section>
 <section id="main-features">
-    <div class="container wow bounceInUp">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row wow fadeIn" data-wow-duration="500ms">
             <!-- features item -->
-            <div id="features" class="owl-carousel owl-theme" style="display: block; opacity: 1;">
-                <div class="owl-wrapper-outer">
-                    <div class="owl-wrapper" style="display: block; transform-origin: 585px center 0; perspective-origin: 585px center; width: 4680px; left: 0; transition: all 800ms ease; transform: translate3d(0, 0, 0);">
-                        <div class="owl-item">
+            <div id="features" class="owl-carousel owl-theme">
+                <!--<div class="owl-wrapper-outer">-->
+                    <!--<div class="owl-wrapper" style="display: block; transform-origin: 585px center 0; perspective-origin: 585px center; width: 4680px; left: 0; transition: all 800ms ease; transform: translate3d(0, 0, 0);">-->
+                        <!--<div class="owl-item">-->
                             <div class="item">
-                                <div class="col row">
-                                    <i class="fa fa-css3 fa-3x" aria-hidden="true"></i>
-                                    <div class="col">这里是CSS3的简介</div>
-                                </div>
+                                <i class="fa fa-css3 fa-3x" aria-hidden="true"></i>
+                                THIS IS CSS3
                             </div>
-                        </div>
-                        <div class="owl-item">
+                        <!--</div>-->
+                        <!--<div class="owl-item">-->
                             <div class="item">
-                                <div class="col row">
-                                    <i class="fa fa-html5 fa-3x" aria-hidden="true"></i>
-                                    <div class="col">这里是HTML5的简介</div>
-                                </div>
+                                <i class="fa fa-html5 fa-3x" aria-hidden="true"></i>
+                                THIS IS HTML5
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-controls clickable">
-                    <div class="owl-pagination">
-                        <div class="owl-page active">
-                            <span class=""></span>
-                        </div>
-                        <div class="owl-page">
-                            <span class=""></span>
-                        </div>
-                    </div>
-                </div>
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="owl-controls clickable">-->
+                    <!--<div class="owl-pagination">-->
+                        <!--<div class="owl-page active">-->
+                            <!--<span class=""></span>-->
+                        <!--</div>-->
+                        <!--<div class="owl-page">-->
+                            <!--<span class=""></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
             <!-- /features item -->
         </div> 		<!-- End row -->
@@ -94,14 +90,14 @@
 </section>
 
 <section id="counter" class="parallax-section">
-    <div class="container wow bounceInUp">
+    <div class="container">
         <div class="row">
 
             <!-- first count item -->
-            <div class="col-md-3 col-sm-6 col-xs-12 text-center animated" data-wow-duration="500ms" style="visibility: visible; animation-duration: 500ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center  wow bounceInUp" data-wow-duration="500ms">
                 <div class="counters-item">
                     <div>
-                        <span class="countTo" data-speed="3000" data-to="320">320</span>
+                        <span class="countTo" data-speed="5000" data-to="320">320</span>
                     </div>
                     <i class="fa fa-users fa-3x"></i>
                     <h3>Happy Clients</h3>
@@ -110,10 +106,10 @@
             <!-- end first count item -->
 
             <!-- second count item -->
-            <div class="col-md-3 col-sm-6 col-xs-12 text-center fadeInDown animated" data-wow-duration="500ms" data-wow-delay="200ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 200ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center  wow bounceInUp" data-wow-duration="500ms" data-wow-delay="200ms">
                 <div class="counters-item">
                     <div>
-                        <span class="countTo" data-speed="3000" data-to="565">565</span>
+                        <span class="countTo" data-speed="5000" data-to="565">565</span>
                     </div>
                     <i class="fa fa-check-square fa-3x"></i>
                     <h3>Projects completed</h3>
@@ -122,10 +118,10 @@
             <!-- end second count item -->
 
             <!-- third count item -->
-            <div class="col-md-3 col-sm-6 col-xs-12 text-center fadeInDown animated" data-wow-duration="500ms" data-wow-delay="400ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 400ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center  wow bounceInUp" data-wow-duration="500ms" data-wow-delay="400ms">
                 <div class="counters-item">
                     <div>
-                        <span class="countTo" data-speed="3000" data-to="95">95</span>
+                        <span class="countTo" data-speed="5000" data-to="95">95</span>
                         <span>%</span>
                     </div>
                     <i class="fa fa-thumbs-up fa-3x"></i>
@@ -136,10 +132,10 @@
             <!-- end third count item -->
 
             <!-- fourth count item -->
-            <div class="col-md-3 col-sm-6 col-xs-12 text-center animated" data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 600ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center wow bounceInUp" data-wow-duration="500ms" data-wow-delay="600ms">
                 <div class="counters-item kill-margin-bottom">
                     <div>
-                        <span class="countTo" data-speed="3000" data-to="2500">2500</span>
+                        <span class="countTo" data-speed="5000" data-to="2500">2500</span>
                     </div>
                     <i class="fa fa-coffee fa-3x"></i>
                     <h3>Cups of Coffee</h3>
@@ -152,18 +148,18 @@
 </section>
 
 <section id="our-team">
-    <div class="container wow bounceInUp">
+    <div class="container">
         <div class="row">
 
             <!-- section title -->
-            <div class="title text-center fadeInUp animated" data-wow-duration="500ms" style="visibility: visible; animation-duration: 500ms; animation-name: fadeInUp;">
+            <div class="title text-center wow bounceInDown" data-wow-duration="500ms" style="visibility: visible; animation-duration: 500ms; animation-name: fadeInUp;">
                 <h2>Our <span class="color">Team</span></h2>
                 <div class="border"></div>
             </div>
             <!-- /section title -->
 
             <!-- team member -->
-            <div class="col-md-3 col-sm-6 fadeInDown animated team" data-wow-duration="500ms" style="visibility: visible; animation-duration: 500ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 wow bounceInUp team" data-wow-duration="500ms" style="visibility: visible; animation-duration: 500ms; animation-name: fadeInDown;">
                 <article class="team-mate">
                     <div class="member-photo">
                         <!-- member photo -->
@@ -199,7 +195,7 @@
             <!-- end team member -->
 
             <!-- team member -->
-            <div class="col-md-3 col-sm-6 fadeInDown animated team" data-wow-duration="500ms" data-wow-delay="200ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 200ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 wow bounceInUp team" data-wow-duration="500ms" data-wow-delay="200ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 200ms; animation-name: fadeInDown;">
                 <article class="team-mate">
                     <div class="member-photo">
                         <!-- member photo -->
@@ -234,7 +230,7 @@
             <!-- end team member -->
 
             <!-- team member -->
-            <div class="col-md-3 col-sm-6 animated team" data-wow-duration="500ms" data-wow-delay="400ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 400ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 wow bounceInUp team" data-wow-duration="500ms" data-wow-delay="400ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 400ms; animation-name: fadeInDown;">
                 <article class="team-mate">
                     <div class="member-photo">
                         <!-- member photo -->
@@ -269,7 +265,7 @@
             <!-- end team member -->
 
             <!-- team member -->
-            <div class="col-md-3 col-sm-6 animated team" data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 600ms; animation-name: fadeInDown;">
+            <div class="col-md-3 col-sm-6 wow bounceInUp team" data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 600ms; animation-name: fadeInDown;">
                 <article class="team-mate kill-margin-bottom">
                     <div class="member-photo">
                         <!-- member photo -->
@@ -304,9 +300,41 @@
             <!-- end team member -->
 
         </div>  	<!-- End row -->
-    </div>
-    <a href="javascript:;" id="scrollUp" (click)="scrollTop()" >
-            <i class="fa fa-angle-up fa-2x"></i>
-        </a>	<!-- End container -->
+    </div><!-- End container -->
 </section>
+<footer id="footer" class="homepageFooter">
+    <div class="container">
+        <div class="row wow bounceInUp" data-wow-duration="500ms">
+            <div class="col-lg-12">
+
+                <!-- Footer Social Links -->
+                <div class="social-icon">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+                <!--/. End Footer Social Links -->
+
+                <!-- copyright -->
+                <div class="copyright text-center">
+                    <div>BitStudio.</div>
+                    <br />
+
+                    <p>Copyright &copy; 2017.BitStudio All rights reserved.</p>
+                </div>
+                <!-- /copyright -->
+
+            </div> <!-- end col lg 12 -->
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</footer> <!-- end footer -->
+<a href="javascript:;" id="scrollUp" (click)="scrollTop()" >
+    <i class="fa fa-angle-up fa-2x"></i>
+</a>
 

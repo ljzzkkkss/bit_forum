@@ -256,6 +256,90 @@ html::-webkit-scrollbar{
     border: 1px solid transparent;
 }
 
+.homepageFooter {
+    background-color: #333439;
+}
+
+.social-icon {
+    padding: 60px 0 35px;
+}
+
+.social-icon > ul {
+    text-align: center;
+}
+
+.social-icon > ul > li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-icon > ul > li > a {
+    background-color: #26292e;
+    display: block;
+    height: 70px;
+    width: 70px;
+
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+
+    -webkit-transition: all 400ms ease-out 0s;
+    -moz-transition: all 400ms ease-out 0s;
+    -o-transition: all 400ms ease-out 0s;
+    transition: all 400ms ease-out 0s;
+}
+
+.social-icon > ul > li > a > i {
+    color: #55606a;
+    display: inline-block;
+    font-size: 32px;
+    line-height: 70px;
+    margin: 0;
+
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+
+    -webkit-transition: all 400ms ease-out 0s;
+    -moz-transition: all 400ms ease-out 0s;
+    -o-transition: all 400ms ease-out 0s;
+    transition: all 400ms ease-out 0s;
+}
+
+.social-icon > ul > li:hover a {
+    background-color: #6CB670;
+
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.social-icon > ul > li:hover a i {
+    color: #fff;
+    opacity: 1;
+    filter: alpha(opacity=100);
+
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.copyright {
+    padding: 20px 0;
+    color: #fff;
+}
+
 #scrollUp {
     border: 1px solid #4e595f;
     bottom: 15px;
