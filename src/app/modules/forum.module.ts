@@ -7,6 +7,8 @@ import { NavbarModule } from './navbar.module';
 import { routing } from '../routing/forum.routing';
 import { HttpService } from "../service/http.service";
 import "froala-editor/js/froala_editor.pkgd.min.js";
+import '../../third-part/css/froala_editor.pkgd.min.css';
+import '../../third-part/css/animate.css';
 
 
 @NgModule({
