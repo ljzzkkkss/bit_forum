@@ -18,6 +18,10 @@ html::-webkit-scrollbar{
 .bg-faded{
     background-color: transparent!important;
 }
+.bg-faded .btn{
+    margin-top: 50px;
+}
+
 .navbar{
     position: absolute!important;
     width: 100%;

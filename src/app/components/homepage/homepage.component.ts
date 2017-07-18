@@ -37,10 +37,8 @@ export class HomepageComponent implements  OnInit{
             animateIn: 'flipInX',
             margin:30,
             stagePadding:30,
-            smartSpeed:450,
             autoplay: true,
-            autoplayTimeout: 300,
-            autoplayHoverPause: true
+            autoplayTimeout: 3000
         });
 
         (function() {
