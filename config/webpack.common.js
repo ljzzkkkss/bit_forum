@@ -84,7 +84,8 @@ module.exports = {
           Popover: "exports-loader?Popover!bootstrap/js/dist/popover",
           Scrollspy: "exports-loader?Scrollspy!bootstrap/js/dist/scrollspy",
           Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
-          Util: "exports-loader?Util!bootstrap/js/dist/util"
+          Util: "exports-loader?Util!bootstrap/js/dist/util",
+          // Popper: 'popper.js'
       }),
     // Workaround for angular/angular#11580
     new webpack.ContextReplacementPlugin(
